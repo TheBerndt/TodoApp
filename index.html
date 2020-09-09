@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div id="todoapp">
+      <div class="flexp">
+        <h1 class="flexc">The ToDo App</h1>
+
+        <div class="flexparent">
+        <form id="form" class="flexchild">
+          <label for="title">What to do?</label><br>
+          <input type="text" id="todo" placeholder="Add Something" required><br>
+          <label for="comments">Comments</label><br>
+          <input type="text" id="comments" placeholder="Not mandatory"><br><br>
+          <label for="checkbox">Hide comments?</label>
+          <input type="checkbox" id="hidecomments"><br>
+
+          <input class="add" type="submit" value="Submit">
+        </form> 
+        </div>
+
+      
+
+        <ul id="todolist" class="flexparent"> 
+       
+        </ul>
+
+
+
+        <button class="clear">Clear All Todos</button>
+
+        
+    
+        
+
+   
+
+    <script src="js/todo.js" async defer></script>
+  </body>
+</html>
