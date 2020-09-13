@@ -9,7 +9,6 @@ window.onload = () => {
   //form submit = funktio joka luo listan todo-elementit ja lisää sen listaan
   form.onsubmit = () => {
     //luo todo-elementin tarvitsemat elementit
-    //lista
     let content_container = document.createElement("div");
     content_container.id = "content-container"
     let li = document.createElement("li");
@@ -20,7 +19,7 @@ window.onload = () => {
     content.id = "content";
     content.append(form.todo.value);
 
-    //kommentit span
+    //kommentit sisältö
     let comments = document.createElement("span");
     comments.id = "comments";
     comments.append(form.comments.value);
@@ -38,10 +37,6 @@ window.onload = () => {
     svg.id = "deleteicon";
     svg.src = "icons/del.svg";
     delbtn.appendChild(svg);
-   /*  let icontext = document.createElement("p");
-    icontext.id = "deletetext";
-    icontext.innerHTML = "Delete";
-    delbtn.appendChild(icontext); */
 
     //lisää listaelementtiin sisältö, kommentit, delete nappi ja timestamppi
     content_container.appendChild(content);
@@ -70,10 +65,7 @@ window.onload = () => {
   };
 };
 
-//const del = document.querySelector("del");
-
-//let comments = document.forms.form.comments;
-
+//tehdään nappi joka tyhjentää listan sisällön
 const clear = document.querySelector(".clearbtn");
 
 clear.addEventListener("click", function () {
