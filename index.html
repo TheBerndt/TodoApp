@@ -23,27 +23,30 @@
     <![endif]-->
 
     <div id="todoapp">
-      <div class="flexp">
-        <h1 class="flexc">The ToDo App</h1>
+      <h1>ToDo App</h1>
 
-        <div class="flexparent">
-        <form id="form" class="flexchild">
-          <label for="title">What to do?</label><br>
-          <input type="text" id="todo" placeholder="Add Something" required><br>
-          <label for="comments">Comments</label><br>
-          <input type="text" id="comments" placeholder="Not mandatory"><br><br>
-          <label for="checkbox">Hide comments?</label>
-          <input type="checkbox" id="hidecomments"><br>
+      <div class="flexparent">
+        <form id="form" class="flexparent">
+          <label for="title">What to do?</label><br />
+          <input
+            type="text"
+            id="todo"
+            placeholder="Add Something"
+            required
+          /><br />
+          <label for="comments">Comments</label><br />
+          <input type="text" id="comments" placeholder="Not mandatory" /><br />
+          <input class="addbtn" type="submit" value="Submit" />
+        </form>
+      </div>
 
-          <input class="add" type="submit" value="Submit">
-        </form> 
-        </div>
-
-        <ul id="todolist" class="flexparent"> 
-       
+      <div class="flexparent">
+        <ul id="todolist" class="flexchild">
+          <!-- tähän todo.js luo listaelementtejä -->
         </ul>
-
-        <button class="clear">Clear All Todos</button>
+        <button class="clearbtn">Clear All</button>
+      </div>
+    </div>
 
     <script src="js/todo.js" async defer></script>
   </body>
