@@ -1,7 +1,7 @@
 # TodoApp in plain JS
 features:  
-• title and paragraph fields for todos
-• timestamp
+• title and paragraph fields for todos  
+• timestamp   
 • add & delete todos
 • clear all todos
 
