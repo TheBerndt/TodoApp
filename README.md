@@ -2,7 +2,7 @@
 features:  
 • title and paragraph fields for todos  
 • timestamp   
-• add & delete todos
+• add & delete todos  
 • clear all todos
 
 Todo:  
