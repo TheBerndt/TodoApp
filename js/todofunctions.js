@@ -6,15 +6,14 @@ const addTodo = () => {
   //muuttujia -->
   let title = form.todo.value;
   let comments = form.comments.value;
-  let time = new Date();
-  let timeStamp = time.toLocaleDateString();
+  let time = new Date().toLocaleString()
 
   //luodaan todo-objekti
   let todo = {
     id: Date.now(),
     title: title,
     comments: comments,
-    time: timeStamp,
+    time: time,
     delete: "Delete",
   };
 
@@ -25,14 +24,15 @@ const addTodo = () => {
   form.comments.value = "";
 };
 
-//display() jonka funktio on lisätä todos sisältö arraysta html listaelementtiin <p> elementteinä template literaalien avulla
+//display() jonka funktio on lisätä todos sisältö arraysta
+//html listaelementtiin <p> elementteinä template literaalien avulla
 const display = () => {
   todolist.innerHTML = "";
   for (let item of todos) {
     if (!todos.includes(item.id)) {
       let li = document.createElement("li");
       li.setAttribute("key", item.id);
-      li.innerHTML = `<p class='content'>${item.title}</p> <p class='comments'>${item.comments}</p> <p class='timeStamp'> Created on: ${item.timeStamp} </p> <u class="deletebtn">Delete</u>`;
+      li.innerHTML = `<p class='content'>${item.title}</p> <p class='comments'>${item.comments}</p> <p class='timeStamp'> Created on: ${item.time} </p> <u class="deletebtn">Delete</u>`;
       todolist.insertAdjacentElement("afterbegin", li);
     }
   }
@@ -43,7 +43,8 @@ const addToStorage = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
-//getFromStorage() joka hakee localstoragesta sen hetkisen todos arrayn, huolehtii että todo-lista on ajantasalla
+//getFromStorage() joka hakee localstoragesta sen hetkisen todos arrayn,
+//huolehtii että todo-lista on ajantasalla
 const getFromStorage = () => {
   const storedItems = localStorage.getItem('todos');
   if (storedItems) {
@@ -52,7 +53,8 @@ const getFromStorage = () => {
   }
 };
 
-//deleteTodo() hakee parametrina annetun listan key-attribuutin avulla ja filtteröi siitä uuden arrayn joka tallennetaan todos arrayhin
+//deleteTodo() hakee parametrina annetun listan key-attribuutin avulla
+//ja filter metodilla poistaa valitun listaelementin ja tallentaa uuden todos arrayn
 const deleteTodo = (key) => {
   console.log('deleted key: ', key);
   todos = todos.filter((item) => item.id != key);
@@ -62,7 +64,8 @@ const deleteTodo = (key) => {
   event.stopPropagation();
 };
 
-//lisää eventlistenerin jokaiseen deletebutton luokan elementtiin joka kutsuu deleteTodo() funktiota painettaessa
+//lisää eventlistenerin jokaiseen deletebutton luokan elementtiin
+//joka kutsuu deleteTodo() funktiota painettaessa
 todolist.addEventListener('click', () => {
   if (event.target.classList.contains('deletebtn')) {
     const key = event.target.parentElement.getAttribute('key');
