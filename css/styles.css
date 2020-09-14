@@ -22,6 +22,9 @@ h1 {
   font-weight: 500;
 }
 
+#todolist {
+}
+
 ul,
 li {
   margin: 0;
@@ -34,13 +37,13 @@ li {
 }
 
 .flexchild {
-  flex: 1 0 1;
+  flex: 1 0 100%;
 }
 
 ul {
   list-style-position: inside;
   list-style-type: none;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 li {
@@ -48,6 +51,10 @@ li {
   border-radius: 4px 4px 4px 4px;
   margin-top: 8px;
   box-shadow: 0em 0em 0.4em 0.1em rgba(128, 128, 128, 0.2);
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.4em;
 }
 
 input {
@@ -82,37 +89,37 @@ label {
   margin: 0.6em 0em 0.2em 0em;
 }
 
-#content-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  padding: 8px;
-}
-
-#content {
+.content {
   font-size: 16px;
   font-weight: 600;
+  flex: 1 0 100%;
   margin: 0;
-  flex: 1 0 50%;
-  padding-bottom: 4px;
+  padding-bottom: 0.1em;
 }
 
-#comments {
+.comments {
+  margin: 0;
   font-weight: 300;
-  flex: 1;
-  flex-basis: 100%;
-  padding-bottom: 4px;
+  flex: 1 0 100%;
+  padding-bottom: 0.6em;
 }
 
-#timeStamp {
+.timeStamp {
   margin: 0;
-  flex-basis: 100%;
-  padding-top: 0.8em;
   font-size: 0.8em;
+  font-weight: 600;
   color: grey;
+  flex: 9;
+  align-self: flex-start;
 }
 
-#deleteicon {
-  width: 16px;
-  flex: 1 0 50%;
+.deletebtn {
+  color: #d45252;
+  font-size: 0.8em;
+  font-weight: 600;
+  flex: 1;
+  align-self: flex-end;
+  border: 0px;
+  background-color: white;
+  cursor: default;
 }
