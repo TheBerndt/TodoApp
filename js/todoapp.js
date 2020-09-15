@@ -16,12 +16,12 @@ window.onload = () => {
     //estetään formin default submit
     event.preventDefault();
 
-    //kutsutaan addTodo() ja esitetään ne listalla display() käyttäen
+    //kutsutaan addTodo() ja esitetään ne listalla, display()
     addTodo();
     display();
   };
 
-  //tehdään nappi joka tyhjentää listan sisällön localstoragesta ja html:stä
+  //tehdään nappi joka tyhjentää listan sisällön
   const clear = document.querySelector('.clearbtn');
   clear.addEventListener('click', function () {
     if (confirm('Are you sure you want to clear all items?')) {
