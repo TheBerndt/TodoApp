@@ -38,12 +38,12 @@ const display = () => {
   }
 };
 
-//addStorage() joka lisää localstorageen todos arrayn
+//addStorage() joka lisää localstorageen todos arrayn JSON muodossa
 const addToStorage = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
-//getFromStorage() joka hakee localstoragesta sen hetkisen todos arrayn,
+//getFromStorage() joka hakee localstoragesta sen hetkisen todos arrayn JSON muodossa,
 //huolehtii että todo-lista on ajantasalla
 const getFromStorage = () => {
   const storedItems = localStorage.getItem('todos');
