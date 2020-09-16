@@ -122,3 +122,8 @@ label {
   background-color: white;
   cursor: default;
 }
+
+.notification {
+  font-size: 2em;
+  color: red;
+}

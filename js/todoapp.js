@@ -3,9 +3,9 @@ import { addTodo, display, getFromStorage } from './todofunctions.js';
 //varmistetaan että dokumentti on ladannut
 window.onload = () => {
   //haetaan elementtejä muuttujiin
-  let form = document.getElementById('form');
-  let todolist = document.getElementById('todolist');
-  let deletebtn = document.getElementsByClassName('delete');
+  const form = document.getElementById('form');
+  const todolist = document.getElementById('todolist');
+  const deletebtn = document.getElementsByClassName('delete');
     
   //haetaan ensin local storagesta todot
   getFromStorage();
@@ -31,8 +31,7 @@ window.onload = () => {
     } else {
       //
     }
-    
-    //console.log('clear painettu');
+  
   });
 
 };

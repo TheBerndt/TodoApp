@@ -4,9 +4,9 @@ let todos = [];
 //addTodo() joka luo todon sisällön
 const addTodo = () => {
   //muuttujia -->
-  let title = form.todo.value;
-  let comments = form.comments.value;
-  let time = new Date().toLocaleString()
+  const title = form.todo.value;
+  const comments = form.comments.value;
+  const time = new Date().toLocaleString()
 
   //luodaan todo-objekti
   let todo = {
@@ -30,7 +30,7 @@ const display = () => {
   todolist.innerHTML = "";
   for (let item of todos) {
     if (!todos.includes(item.id)) {
-      let li = document.createElement("li");
+      const li = document.createElement("li");
       li.setAttribute("key", item.id);
       li.innerHTML = `<p class='content'>${item.title}</p> <p class='comments'>${item.comments}</p> <p class='timeStamp'> Created on: ${item.time} </p> <u class="deletebtn">Delete</u>`;
       todolist.insertAdjacentElement("afterbegin", li);
