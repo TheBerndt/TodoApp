@@ -1,14 +1,14 @@
-//array mihin tallennetaan todo-objekti
+//save all todos into array
 let todos = [];
 
-//addTodo() joka luo todon sisällön
+//addTodo function creates addtodo objects and pushes them into array and localstorage
 const addTodo = () => {
-  //muuttujia -->
+  //variables -->
   const title = form.todo.value;
   const comments = form.comments.value;
   const time = new Date().toLocaleString()
 
-  //luodaan todo-objekti
+  //create todo object
   let todo = {
     id: Date.now(),
     title: title,
@@ -17,15 +17,14 @@ const addTodo = () => {
     delete: "Delete",
   };
 
-  //pushataan luotu objekti -> todo array
+  //push to array, call addToStorage
   todos.push(todo);
   addToStorage(todos);
   form.todo.value = "";
   form.comments.value = "";
 };
 
-//display() jonka funktio on lisätä todos sisältö arraysta
-//html listaelementtiin <p> elementteinä template literaalien avulla
+//function that renders todos from arrays, uses template literals to construct the li html
 const display = () => {
   todolist.innerHTML = "";
   for (let item of todos) {
@@ -38,13 +37,12 @@ const display = () => {
   }
 };
 
-//addStorage() joka lisää localstorageen todos arrayn JSON muodossa
+//function that adds todos to localstorage in JSON format
 const addToStorage = () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 };
 
-//getFromStorage() joka hakee localstoragesta sen hetkisen todos arrayn JSON muodossa,
-//huolehtii että todo-lista on ajantasalla
+//function that gets todos from localstorage, parses them from JSON
 const getFromStorage = () => {
   const storedItems = localStorage.getItem('todos');
   if (storedItems) {
@@ -53,8 +51,7 @@ const getFromStorage = () => {
   }
 };
 
-//deleteTodo() hakee parametrina annetun listan key-attribuutin avulla
-//ja filter metodilla poistaa valitun listaelementin ja tallentaa uuden todos arrayn
+//delete function, uses key to filter todos from array, creates new array and adds it to storage
 const deleteTodo = (key) => {
   console.log('deleted key: ', key);
   todos = todos.filter((item) => item.id != key);
@@ -64,8 +61,7 @@ const deleteTodo = (key) => {
   event.stopPropagation();
 };
 
-//lisää eventlistenerin jokaiseen deletebutton luokan elementtiin
-//joka kutsuu deleteTodo() funktiota painettaessa
+//creates eventlistener to deletebuttons, assigns key to delete buttons parent = li item
 todolist.addEventListener('click', () => {
   if (event.target.classList.contains('deletebtn')) {
     const key = event.target.parentElement.getAttribute('key');
@@ -75,5 +71,5 @@ todolist.addEventListener('click', () => {
   }
 });
 
-//moduuliexportilla funktiot todoapp.js käyttöön
+//exports to todoapp.js
 export { addTodo, display, addToStorage, getFromStorage, deleteTodo };

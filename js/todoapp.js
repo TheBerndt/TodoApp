@@ -1,27 +1,27 @@
 import { addTodo, display, getFromStorage } from './todofunctions.js';
 
-//varmistetaan että dokumentti on ladannut
+//lets make sure document is loaded
 window.onload = () => {
-  //haetaan elementtejä muuttujiin
+  //variables
   const form = document.getElementById('form');
   const todolist = document.getElementById('todolist');
   const deletebtn = document.getElementsByClassName('delete');
     
-  //haetaan ensin local storagesta todot
+  //get todos from localstorage if present
   getFromStorage();
   
-  //form submit = funktio joka luo listan todo-elementit ja lisää sen listaan
+  //form onsubmit function that executes addTodo() and display()
   form.onsubmit = () => {
 
-    //estetään formin default submit
+    //prevent forms default submit behaviour
     event.preventDefault();
 
-    //kutsutaan addTodo() ja esitetään ne listalla, display()
+    //call addTodo() and render them using display()
     addTodo();
     display();
   };
 
-  //tehdään nappi joka tyhjentää listan sisällön
+  //a button to clear all todos and reload document
   const clear = document.querySelector('.clearbtn');
   clear.addEventListener('click', function () {
     if (confirm('Are you sure you want to clear all items?')) {
